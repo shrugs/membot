@@ -7,8 +7,10 @@ gem 'pg'
 gem 'aasm'
 gem 'puma'
 gem 'httparty'
+gem 'nested-hstore'
 
 group :development do
+  gem 'listen'
   gem 'spring'
 end
 

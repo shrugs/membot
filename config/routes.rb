@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
 
-  post :fb_webhook, to: 'conversations_controller#inbound_message'
+  match :fb_webhook, to: 'conversations#inbound_message', via: [:get, :post]
 
 end
