@@ -132,7 +132,7 @@ class Conversation < ActiveRecord::Base
   end
 
   def after_provide_answer
-    text_message Congrats.new
+    text_message Congrats.new.saying
     self.new_question!
     post_progress_for_last_question
   end
@@ -150,7 +150,7 @@ class Conversation < ActiveRecord::Base
   end
 
   def on_provide_incorrect_answer(correct_text)
-    text_message GoodHussle.new(correct_text)
+    text_message GoodHussle.new(correct_text).saying
   end
 
   def after_provide_incorrect_answer
